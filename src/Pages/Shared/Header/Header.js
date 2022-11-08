@@ -77,7 +77,7 @@ const Header = () => {
                         <div className='flex items-center space-x-6'>
                             <ul className="items-center justify-center space-y-4 md:flex md:space-x-8 md:space-y-0 font-semibold uppercase">
                                 <li className=" hover:text-primary">
-                                    <NavLink className={({ isActive }) => isActive ? 'text-primary' : ''} to='/home'>Home</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'text-primary' : ''} to='/'>Home</NavLink>
                                 </li>
                                 <li className=" hover:text-primary">
                                     <NavLink to='/services' className={({ isActive }) => isActive ? 'text-primary' : ''}>Services</NavLink>
