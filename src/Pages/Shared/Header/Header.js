@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiMenuAlt1, HiOutlineX, HiUserCircle } from "react-icons/hi";
 import { BiUser, BiEdit } from "react-icons/bi";
 import { MdMonochromePhotos } from "react-icons/md";
 import { VscSignOut } from "react-icons/vsc";
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
-    const [user, setUser] = useState(null);
+    const { user } = useContext(AuthContext);
+    console.log(user);
+
     const handleLogOut = () => {
 
     }
     return (
-        <nav className="w-full shadow sticky top-0 z-50">
+        <nav className="w-full shadow sticky top-0 z-50 bg-white">
             <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex px-4 md:px-6">
                 <div>
                     <div className="flex items-center gap-7 justify-between py-2 md:block">

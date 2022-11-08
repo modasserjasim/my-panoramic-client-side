@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     return (
-        <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
+        <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300 -z-10">
             <h1 className="text-4xl font-medium text-center">Signup Today</h1>
 
             <form className="my-10">
