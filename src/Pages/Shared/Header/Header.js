@@ -1,18 +1,26 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { HiMenuAlt1, HiOutlineX, HiUserCircle } from "react-icons/hi";
 import { BiUser, BiEdit } from "react-icons/bi";
 import { MdMonochromePhotos } from "react-icons/md";
 import { VscSignOut } from "react-icons/vsc";
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
     const [navbar, setNavbar] = useState(false);
-    const { user } = useContext(AuthContext);
-    console.log(user);
+    const navigate = useNavigate();
 
     const handleLogOut = () => {
-
+        logOut()
+            .then(() => {
+                navigate('/login')
+                toast.success('You have logged out from the site');
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
     }
     return (
         <nav className="w-full shadow sticky top-0 z-50 bg-white">
