@@ -11,6 +11,7 @@ const AddReview = ({ service }) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
+        const email = form.email.value;
         const userPhoto = form.userPhoto.value;
         const userReview = form.review.value;
 
@@ -18,6 +19,7 @@ const AddReview = ({ service }) => {
             serviceId: _id,
             serviceName: title,
             userName: name,
+            email: email,
             userPhoto: userPhoto,
             review: userReview
         }
@@ -59,7 +61,7 @@ const AddReview = ({ service }) => {
 
                         <div className='w-full md:mt-0 mt-5'>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="image">Your Email</label>
-                            <input defaultValue={user?.email} name='profilePhoto' readOnly type="email" placeholder='Enter your email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
+                            <input defaultValue={user?.email} name='email' readOnly type="email" placeholder='Enter your email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
                         </div>
                     </div>
                     <div className='w-full md:mt-0 mt-5'>

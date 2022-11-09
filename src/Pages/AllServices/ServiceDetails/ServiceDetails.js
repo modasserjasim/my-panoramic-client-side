@@ -2,6 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { RiPriceTag3Line } from "react-icons/ri";
 import Reviews from '../../AllReviews/Reviews/Reviews';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceDetails = () => {
     const { service } = useLoaderData();
@@ -9,8 +11,14 @@ const ServiceDetails = () => {
     console.log(service);
     return (
         <div>
-            <div className="flex items-end overflow-hidden bg-cover rounded-lg h-[100vh] md:h-[80vh] object-cover w-full" style={{ backgroundImage: `url(${image})` }}>
-                <div className="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-md bg-white/60 dark:bg-gray-800/60">
+
+            <div className="w-full">
+                <PhotoProvider>
+                    <PhotoView src={image}>
+                        <img src={image} className="object-cover w-full h-[80vh] cursor-pointer" alt={title} />
+                    </PhotoView>
+                </PhotoProvider>
+                <div className="w-full md:-mt-52 -mt-24 px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-md bg-white/60 dark:bg-gray-800/60">
                     <div className='max-w-5xl mx-auto'>
                         <h2 className="text-2xl md:text-5xl mb-3 font-semibold text-gray-800 capitalize dark:text-white">{title}</h2>
                         <h3 className='flex items-center gap-1 text-xl font-semibold'><RiPriceTag3Line className='font-bold text-2xl' /> ${price}</h3>
@@ -18,6 +26,7 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
+
             <Reviews service={service}></Reviews>
         </div>
     );
