@@ -2,22 +2,24 @@ import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
-const AddReview = () => {
+const AddReview = ({ service }) => {
     const { user } = useContext(AuthContext);
+    const { _id, title } = service;
+    console.log(service);
 
     const handleAddReview = e => {
         e.preventDefault();
         const form = e.target;
-        const title = form.title.value;
-        const image = form.image.value;
-        const price = form.price.value;
-        const description = form.description.value;
+        const name = form.name.value;
+        const userPhoto = form.userPhoto.value;
+        const userReview = form.review.value;
 
         const review = {
-            title: title,
-            image: image,
-            price: price,
-            description: description
+            serviceId: _id,
+            serviceName: title,
+            userName: name,
+            userPhoto: userPhoto,
+            review: userReview
         }
         console.log(review);
 
@@ -62,7 +64,7 @@ const AddReview = () => {
                     </div>
                     <div className='w-full md:mt-0 mt-5'>
                         <label className="text-gray-700 dark:text-gray-200" htmlFor="image">Your Profile Photo</label>
-                        <input defaultValue={user?.photoURL} name='profilePhoto' type="text" placeholder='Enter the Profile URL' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
+                        <input defaultValue={user?.photoURL} name='userPhoto' type="text" placeholder='Enter the Profile URL' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
                     </div>
                     <div>
                         <label className="text-gray-700 dark:text-gray-200" htmlFor="review">Review</label>

@@ -5,7 +5,7 @@ import Review from '../Review/Review';
 import { RiExternalLinkFill } from "react-icons/ri";
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
-const Reviews = () => {
+const Reviews = ({ service }) => {
     const { user } = useContext(AuthContext);
     return (
         <div className="pt-5 pb-12 bg-gray-50 rounded-t-10xl overflow-hidden">
@@ -21,7 +21,7 @@ const Reviews = () => {
                                 <Link to='/login' className="text-green-700 font-medium inline-flex space-x-1 items-center hover:underline"> <span> click here to Login</span><span><RiExternalLinkFill /></span></Link>
                             </h2>
 
-                            <AddReview></AddReview>
+                            <AddReview service={service}></AddReview>
                         </div>
                     </div>
 
