@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
@@ -21,8 +22,26 @@ const MyReviews = () => {
 
             })
             .catch(err => toast.error(err.message))
-    }, [user?.email]);
-    console.log(reviews);
+    }, [user?.email, refresh]);
+    // console.log(reviews);
+
+    // handle delete
+    const handleDeleteReview = id => {
+        fetch(`http://localhost:4000/review/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status) {
+                    toast.success(data.message)
+                    setRefresh(!refresh);
+                } else {
+                    toast.error(data.error)
+                }
+            })
+            .catch(err => toast.error(err.message))
+    }
+
     return (
         <div className='max-w-5xl mx-auto my-16'>
             <div className='flex flex-col justify-center items-center'>
@@ -55,8 +74,10 @@ const MyReviews = () => {
 
                                     </div>
                                     <div className='flex flex-col md:flex-row text-2xl md:text-3xl gap-4'>
-                                        <FiEdit />
-                                        <FiTrash2 />
+                                        <button><Link to={`/edit-review/${review._id}`}><FiEdit className=' hover:text-green-600' /></Link></button>
+                                        <button onClick={() => handleDeleteReview(review._id)}>
+                                            <FiTrash2 className=' hover:text-red-600' />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
