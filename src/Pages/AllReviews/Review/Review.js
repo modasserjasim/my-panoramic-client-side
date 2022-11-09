@@ -3,9 +3,9 @@ import { RiStarSFill } from "react-icons/ri";
 
 const Review = ({ rev }) => {
     console.log(rev);
-    const { userName, userPhoto, review } = rev;
+    const { userName, review } = rev;
     return (
-        <div className="mb-5 shadow-lg rounded-md overflow-hidden">
+        <div className="mb-5 shadow-lg rounded-lg overflow-hidden">
             <div className="py-3 px-4 md:px-16 bg-gray-300 bg-opacity-40">
                 <div className="flex flex-wrap items-center">
                     <img className="mr-6 self-center w-12 h-12 border rounded-full" src={rev?.userPhoto} alt="" />
