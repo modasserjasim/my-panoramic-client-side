@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { RiPriceTag3Line } from "react-icons/ri";
 import Reviews from '../../AllReviews/Reviews/Reviews';
@@ -8,7 +8,8 @@ import 'react-photo-view/dist/react-photo-view.css';
 const ServiceDetails = () => {
     const { service } = useLoaderData();
     const { title, image, price, description } = service;
-    console.log(service);
+    // console.log(service);
+
     return (
         <div>
 

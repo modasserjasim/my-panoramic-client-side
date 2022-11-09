@@ -2,25 +2,22 @@ import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
-const AddReview = ({ service }) => {
+const AddReview = ({ service, setRefresh, refresh }) => {
     const { user } = useContext(AuthContext);
     const { _id, title } = service;
-    console.log(service);
+    // console.log(service);
 
     const handleAddReview = e => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const userPhoto = form.userPhoto.value;
         const userReview = form.review.value;
 
         const review = {
             serviceId: _id,
             serviceName: title,
-            userName: name,
-            email: email,
-            userPhoto: userPhoto,
+            userName: user.displayName,
+            email: user.email,
+            userPhoto: user.photoURL,
             review: userReview
         }
         console.log(review);
@@ -39,6 +36,7 @@ const AddReview = ({ service }) => {
                 if (data.status) {
                     form.reset();
                     toast.success(data.message);
+                    setRefresh(!refresh);
                 } else {
                     toast.error(data.error)
                 }
@@ -49,28 +47,17 @@ const AddReview = ({ service }) => {
 
     return (
         <div className="p-4 mx-auto">
-            <h2 className="text-2xl mb-5 font-semibold text-gray-700 capitalize dark:text-white">Leave A Review</h2>
-
+            <h2 className="text-2xl mb-5 font-semibold text-gray-700 dark:text-white">Leave A Review as</h2>
+            <div className="flex items-center gap-3">
+                <img src={user?.photoURL} alt="" className="self-center flex-shrink-0 w-16 h-16 border rounded-full md:justify-self-start" />
+                <h4 className="text-lg font-semibold text-center md:text-left">{user?.displayName}</h4>
+            </div>
             <form onSubmit={handleAddReview}>
-                <div className='space-y-5'>
-                    <div className='md:flex md:gap-6'>
-                        <div className='w-full'>
-                            <label className="text-gray-700 dark:text-gray-200" htmlFor="username">Your Name</label>
-                            <input defaultValue={user?.displayName} name='name' id="username" type="text" placeholder='Enter Service Name' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
-                        </div>
+                <div className='mt-8'>
 
-                        <div className='w-full md:mt-0 mt-5'>
-                            <label className="text-gray-700 dark:text-gray-200" htmlFor="image">Your Email</label>
-                            <input defaultValue={user?.email} name='email' readOnly type="email" placeholder='Enter your email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
-                        </div>
-                    </div>
-                    <div className='w-full md:mt-0 mt-5'>
-                        <label className="text-gray-700 dark:text-gray-200" htmlFor="image">Your Profile Photo</label>
-                        <input defaultValue={user?.photoURL} name='userPhoto' type="text" placeholder='Enter the Profile URL' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" required />
-                    </div>
                     <div>
-                        <label className="text-gray-700 dark:text-gray-200" htmlFor="review">Review</label>
-                        <textarea name='review' id="review" type="textarea" className="form-control block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring h-20" rows="4"
+                        <label className="text-gray-700 dark:text-gray-200" htmlFor="review">Write your review</label>
+                        <textarea name='review' id="review" type="textarea" className="form-control block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring h-32" rows="5"
                             placeholder="Write your review here" required />
                     </div>
 
