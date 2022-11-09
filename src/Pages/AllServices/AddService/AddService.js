@@ -46,8 +46,8 @@ const AddService = () => {
     }
 
     return (
-        <div className="max-w-4xl p-4 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 md:my-20 my-8">
-            <h2 className="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Add a new service</h2>
+        <div className="max-w-4xl p-5 md:p-10 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 md:my-20 my-8">
+            <h2 className="text-4xl  font-semibold text-gray-700 capitalize dark:text-white mb-8">Add a new service</h2>
 
             <form onSubmit={handleAddService}>
                 <div>

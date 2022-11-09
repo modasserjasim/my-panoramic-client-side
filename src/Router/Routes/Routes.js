@@ -8,6 +8,7 @@ import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Services></Services>,
+                element: <PrivateRoute><Services></Services></PrivateRoute>,
                 loader: () => fetch('http://localhost:4000/services')
             },
             {

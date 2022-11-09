@@ -41,7 +41,10 @@ const Login = () => {
                 toast.success(`You have successfully logged in as ${user.displayName}`);
 
             })
-            .catch(error => toast.error(error))
+            .catch(error => {
+                const errorCode = error.code;
+                toast.error(`Sorry! ${errorCode}`);
+            })
     }
 
     return (
