@@ -9,7 +9,7 @@ const Blog = () => {
             <div className="mb-12 space-y-2 text-center">
                 <span className="block w-max mx-auto px-3 py-1.5 border border-green-200 rounded-full bg-green-100 text-green-600">Blog</span>
                 <h2 className="text-2xl font-bold md:text-4xl">4 React JS Q&A</h2>
-                <p className="lg:w-5/12 lg:mx-auto">Learn how to think in React with step-by-step explanations and interactive examples.</p>
+                <p className="lg:w-5/12 lg:mx-auto">Learn how to think in Node with step-by-step explanations and interactive examples.</p>
             </div>
             <div className="relative block p-8 overflow-hidden border bg-base-100 border-slate-100 rounded-lg shadow-lg">
                 <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-green-600"></span>

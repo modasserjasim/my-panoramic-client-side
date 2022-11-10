@@ -26,16 +26,9 @@ const Reviews = ({ service }) => {
             <div className="px-4 mx-auto max-w-5xl">
                 <h1 className="mt-8 mb-5  text-3xl md:text-6xl font-heading font-medium leading-tight">Recent reviews</h1>
 
-                {
-                    reviews.length > 0 ? <>
-                        <p className="inline-block mb-8 text-2xl md:text-3xl font-heading font-medium underline hover:text-green-700">{reviews.length} reviews</p>
-                        {reviews.map(review => <Review key={review._id} rev={review}></Review>)}
-                    </> : 'There are no reviews yet. Be the first one to write review.'
-
-                }
                 <div className="flex flex-wrap -mx-2 mb-14 mt-12">
                     <div className="w-full px-2 mb-4 xl:mb-0">
-                        <div className="h-full py-12 px-8 bg-white rounded-3xl">
+                        <div className="h-full py-6 px-4 sm:py-8 sm:px-8 bg-white rounded-3xl">
                             {
                                 user?.uid ? <AddReview
                                     service={service}
@@ -57,6 +50,15 @@ const Reviews = ({ service }) => {
                     </div>
 
                 </div>
+
+                {
+                    reviews.length > 0 ? <>
+                        <p className="inline-block mb-8 text-xl md:text-2xl font-heading font-medium underline hover:text-green-700">{reviews.length} reviews found</p>
+                        {reviews.map(review => <Review key={review._id} rev={review}></Review>)}
+                    </> : <h3 className='text-2xl'>There are no reviews yet. Be the first one to write review.</h3>
+
+                }
+
             </div>
         </div>
     );

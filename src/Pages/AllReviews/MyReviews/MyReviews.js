@@ -73,7 +73,7 @@ const MyReviews = () => {
                                         <p className="mb-8 text-darkBlueGray-400 leading-loose">{review?.review}</p>
 
                                     </div>
-                                    <div className='flex flex-col md:flex-row text-2xl md:text-3xl gap-4'>
+                                    <div className='flex items-start flex-col md:flex-row text-2xl md:text-3xl gap-4'>
                                         <button><Link to={`/edit-review/${review._id}`}><FiEdit className=' hover:text-green-600' /></Link></button>
                                         <button onClick={() => handleDeleteReview(review._id)}>
                                             <FiTrash2 className=' hover:text-red-600' />
