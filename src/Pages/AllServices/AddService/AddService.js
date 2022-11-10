@@ -21,7 +21,7 @@ const AddService = () => {
 
 
         // send the data using POST Method
-        fetch('http://localhost:4000/service', {
+        fetch('https://my-panorama.vercel.app/service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

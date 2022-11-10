@@ -23,7 +23,7 @@ const AddReview = ({ service, setRefresh, refresh }) => {
         console.log(review);
 
         // send the data using POST Method
-        fetch('http://localhost:4000/review', {
+        fetch('https://my-panorama.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

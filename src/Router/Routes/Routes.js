@@ -21,17 +21,17 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:4000/services')
+                loader: () => fetch('https://my-panorama.vercel.app/services')
             },
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:4000/services')
+                loader: () => fetch('https://my-panorama.vercel.app/services')
             },
             {
                 path: '/service/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:4000/service/${params.id}`)
+                loader: ({ params }) => fetch(`https://my-panorama.vercel.app/service/${params.id}`)
             },
             {
                 path: '/blog',
@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
             {
                 path: '/edit-review/:id',
                 element: <EditReview></EditReview>,
-                loader: ({ params }) => fetch(`http://localhost:4000/review/${params.id}`)
+                loader: ({ params }) => fetch(`https://my-panorama.vercel.app/review/${params.id}`)
             },
         ]
     }

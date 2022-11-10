@@ -2,7 +2,7 @@ export const setAuthToken = (user) => {
     const currentUser = {
         email: user.email
     }
-    fetch('http://localhost:4000/jwt', {
+    fetch('https://my-panorama.vercel.app/jwt', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

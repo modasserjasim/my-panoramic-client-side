@@ -15,7 +15,7 @@ const EditReview = () => {
             review: form.review.value
         }
 
-        fetch(`http://localhost:4000/review/${review._id}`, {
+        fetch(`https://my-panorama.vercel.app/review/${review._id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

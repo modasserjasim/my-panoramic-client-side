@@ -13,7 +13,7 @@ const Reviews = ({ service }) => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/reviews?serviceId=${service?._id}`)
+        fetch(`https://my-panorama.vercel.app/reviews?serviceId=${service?._id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log('received', data);

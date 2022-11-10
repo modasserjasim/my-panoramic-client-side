@@ -12,7 +12,7 @@ const MyReviews = () => {
     useTitle('My Reviews');
 
     useEffect(() => {
-        fetch(`http://localhost:4000/user-reviews?email=${user?.email}`, {
+        fetch(`https://my-panorama.vercel.app/user-reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('panorama-token')}`
             }
@@ -38,7 +38,7 @@ const MyReviews = () => {
 
     // handle delete
     const handleDeleteReview = id => {
-        fetch(`http://localhost:4000/review/${id}`, {
+        fetch(`https://my-panorama.vercel.app/review/${id}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('panorama-token')}`
