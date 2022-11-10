@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { HiMenuAlt1, HiOutlineX } from "react-icons/hi";
 import { MdMonochromePhotos } from "react-icons/md";
 import { VscSignOut, VscSignIn } from "react-icons/vsc";
@@ -9,7 +9,6 @@ import { toast } from 'react-toastify';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const [navbar, setNavbar] = useState(false);
-    const navigate = useNavigate();
 
     const handleLogOut = () => {
         logOut()
@@ -73,8 +72,8 @@ const Header = () => {
                                         <li className=" hover:text-green-800">
                                             <NavLink to='/add-service' className={({ isActive }) => isActive ? 'text-green-800' : ''}>Add Service</NavLink>
                                         </li>
-                                        <li className="px-4 mr-3 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 hidden md:block">
-                                            <Link className='flex items-center gap-2' onClick={handleLogOut} ><VscSignOut /> Logout</Link>
+                                        <li className="px-4 mr-3 py-2 text-white bg-green-800 rounded-md shadow hover:bg-gray-800 hidden md:block">
+                                            <Link className='flex items-center gap-2' onClick={handleLogOut} ><VscSignOut className='text-2xl' /> Logout</Link>
                                         </li >
                                     </> : <>
                                         <Link to='/login'

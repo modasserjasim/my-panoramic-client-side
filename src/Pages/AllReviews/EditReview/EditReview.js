@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 const EditReview = () => {
     const { review } = useLoaderData();
-
+    useTitle('Edit Reviews');
     const navigate = useNavigate();
     const handleEditReview = e => {
         e.preventDefault();

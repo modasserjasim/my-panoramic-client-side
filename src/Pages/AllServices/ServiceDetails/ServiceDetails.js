@@ -4,11 +4,13 @@ import { RiPriceTag3Line } from "react-icons/ri";
 import Reviews from '../../AllReviews/Reviews/Reviews';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../../hooks/useTitle';
 
 const ServiceDetails = () => {
     const { service } = useLoaderData();
     const { title, image, price, description } = service;
     // console.log(service);
+    useTitle(`${title}`);
 
     return (
         <div>

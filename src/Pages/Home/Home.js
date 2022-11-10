@@ -3,10 +3,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Service from '../AllServices/Service/Service';
 import { MdMapsHomeWork, MdOutlinePhoneInTalk, MdOutlineForwardToInbox } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPinterestP } from "react-icons/fa";
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
     const { homeServices } = useLoaderData();
-    console.log(homeServices);
+    useTitle('Home');
     return (
         <div>
             <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">

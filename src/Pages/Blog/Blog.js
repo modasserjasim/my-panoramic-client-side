@@ -1,8 +1,10 @@
 import React from 'react';
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { ScrollRestoration } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('Blog');
     return (
         <div className='my-10 px-4 md:px-6 max-w-5xl mx-auto'>
             <ScrollRestoration />

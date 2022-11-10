@@ -3,11 +3,13 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     const [refresh, setRefresh] = useState(false);
+    useTitle('My Reviews');
 
     useEffect(() => {
         fetch(`http://localhost:4000/user-reviews?email=${user?.email}`)
