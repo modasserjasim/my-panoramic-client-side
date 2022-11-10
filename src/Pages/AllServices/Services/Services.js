@@ -14,7 +14,7 @@ const Services = () => {
         <div className="px-6 bg-gray-50 py-16  text-center">
             <div className="px-6 max-w-7xl mx-auto">
                 <div className="max-w-xl mx-auto">
-                    <h1 className="text-2xl font-bold text-gray-800 lg:text-4xl">Memories That Will Last A Lifetime</h1>
+                    <h1 className="text-2xl font-bold text-gray-800 lg:text-4xl">All Services</h1>
                     <p className="mt-6 text-gray-500 ">I love capturing memories. That look, that smile, those tears, that brief moment frozen in time. Real memories, real emotions.</p>
                 </div>
                 {

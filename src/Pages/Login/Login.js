@@ -14,13 +14,6 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     const navigate = useNavigate();
 
-    useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, 300)
-    }, [])
-
     //login with Google Account
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleLogin = () => {
@@ -34,7 +27,6 @@ const Login = () => {
                 const errorCode = error.code;
                 toast.error(`Sorry! ${errorCode}`);
             })
-        loading(false);
     }
 
     // login with email and password
@@ -58,6 +50,12 @@ const Login = () => {
                 toast.error(`Sorry! ${errorCode}`);
             })
     }
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 100)
+    }, [])
 
     return (
         <div>

@@ -94,7 +94,7 @@ const Home = () => {
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                     <div>
-                        <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                        <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-green-600">
                             Brand new
                         </p>
                     </div>
@@ -122,50 +122,46 @@ const Home = () => {
                                     height="24"
                                 />
                             </svg>
-                            <span className="relative">The</span>
+                            <span className="relative">My</span>
                         </span>{' '}
-                        quick, brown fox jumps over a lazy dog
+                        Panorama Wedding Planners
                     </h2>
                     <p className="text-base text-gray-700 md:text-lg">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque rem aperiam, eaque ipsa quae.
+                        I have the sense fresh, new and original ideas that will ensure the event we organize is successful, unique and memorable.
                     </p>
                 </div>
                 <div className="grid gap-8 row-gap-5 mb-8 md:row-gap-8 lg:grid-cols-4 sm:grid-cols-2">
-                    <div className="duration-300 transform bg-white border-l-4 border-deep-purple-accent-400 hover:-translate-y-2">
+                    <div className="duration-300 transform bg-white border-l-4 border-green-600 hover:-translate-y-2">
                         <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
-                            <h6 className="mb-2 font-semibold leading-5">The doctor said</h6>
+                            <h6 className="mb-2 font-semibold leading-5">Creative</h6>
                             <p className="text-sm text-gray-900">
-                                Sportacus andrew weatherall goose Refined gentlemen super mario
-                                des lynam alpha trion zap rowsdower.
+                                We are creative in every aspect of the event; planning, promotional and publicity as well as execution. By being creative, our events are more outstanding and will leave a great impact not just to us, but to our clients as well.
                             </p>
                         </div>
                     </div>
-                    <div className="duration-300 transform bg-white border-l-4 border-deep-purple-accent-400 hover:-translate-y-2">
+                    <div className="duration-300 transform bg-white border-l-4 border-green-600 hover:-translate-y-2">
                         <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
-                            <h6 className="mb-2 font-semibold leading-5">Skate ipsum dolor</h6>
+                            <h6 className="mb-2 font-semibold leading-5">Meticulous</h6>
                             <p className="text-sm text-gray-900">
-                                Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                We are very particular in every aspect of the event management to guarantee the event we organize runs perfectly and efficiently.
                             </p>
                         </div>
                     </div>
-                    <div className="duration-300 transform bg-white border-l-4 border-deep-purple-accent-400 hover:-translate-y-2">
+                    <div className="duration-300 transform bg-white border-l-4 border-green-600 hover:-translate-y-2">
                         <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
                             <h6 className="mb-2 font-semibold leading-5">
-                                Baseball ipsum dolor
+                                Event Services
                             </h6>
                             <p className="text-sm text-gray-900">
-                                Bro ipsum dolor sit amet gaper backside single track, manny Bike
-                                epic clipless. Schraeder drop gondy.
+                                With many years of experience in event organizing, we understand that there many factors that lead to a well-organized and successful event. Each of these aspects is managed carefully as they are the main components of the main event.
                             </p>
                         </div>
                     </div>
-                    <div className="duration-300 transform bg-white border-l-4 border-deep-purple-accent-400 hover:-translate-y-2">
+                    <div className="duration-300 transform bg-white border-l-4 border-green-600 hover:-translate-y-2">
                         <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
-                            <h6 className="mb-2 font-semibold leading-5">They urge you</h6>
+                            <h6 className="mb-2 font-semibold leading-5">Satisfaction</h6>
                             <p className="text-sm text-gray-900">
-                                A flower in my garden, a mystery in my panties. Heart attack never
-                                stopped old Big Bear.
+                                Of course, achieving our clients’ satisfaction is what motivates us to bring out the best events. We understand the clients’ expectations and presenting them with successful events that raved fantastic reviews around the world!
                             </p>
                         </div>
                     </div>
@@ -178,7 +174,7 @@ const Home = () => {
                         <div className="text-white lg:w-1/2 lg:mx-6">
                             <h1 className="text-3xl font-semibold capitalize lg:text-5xl">Get In Touch</h1>
 
-                            <p className="max-w-xl mt-6">Ask us everything and we would love to hear from you</p>
+                            <p className="max-w-xl mt-6">Ask me everything and I would love to hear from you</p>
 
                             <div className="mt-6 space-y-8 md:mt-8">
                                 <p className="flex items-start -mx-2">
