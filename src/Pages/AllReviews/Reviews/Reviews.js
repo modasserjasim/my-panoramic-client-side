@@ -16,7 +16,7 @@ const Reviews = ({ service }) => {
         fetch(`http://localhost:4000/reviews?serviceId=${service?._id}`)
             .then(res => res.json())
             .then(data => {
-                console.log('received', data);
+                // console.log('received', data);
                 setReviews(data.reviews)
             })
     }, [service?._id, refresh]);

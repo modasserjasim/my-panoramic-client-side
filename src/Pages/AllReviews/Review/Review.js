@@ -2,7 +2,7 @@ import React from 'react';
 import { RiStarSFill } from "react-icons/ri";
 
 const Review = ({ rev }) => {
-    console.log(rev);
+    // console.log(rev);
     const { userName, review } = rev;
     return (
         <div className="mb-5 shadow-lg rounded-lg overflow-hidden">
