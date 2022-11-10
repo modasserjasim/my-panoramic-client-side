@@ -2,6 +2,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { setAuthToken } from '../../api/auth';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import Spinner from '../Others/Spinner/Spinner';
@@ -20,6 +21,8 @@ const Login = () => {
         loginWithGoogle(googleProvider)
             .then(result => {
                 const user = result.user;
+                // APPLYING jwt token
+                setAuthToken(user);
                 navigate(from, { replace: true });
                 toast.success(`You have successfully logged in as ${user.displayName}`);
             })
@@ -40,7 +43,13 @@ const Login = () => {
         loginWithEmail(email, password)
             .then(result => {
                 const user = result.user;
-                form.reset();
+
+
+                // APPLYING jwt token
+                setAuthToken(user);
+
+
+
                 navigate(from, { replace: true });
                 toast.success(`You have successfully logged in as ${user.displayName}`);
 

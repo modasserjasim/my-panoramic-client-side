@@ -6,14 +6,23 @@ import { Link } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     const [refresh, setRefresh] = useState(false);
     useTitle('My Reviews');
 
     useEffect(() => {
-        fetch(`http://localhost:4000/user-reviews?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:4000/user-reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('panorama-token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
+                return res.json()
+            })
             .then(data => {
                 // console.log(data);
                 if (data.status) {
@@ -24,13 +33,16 @@ const MyReviews = () => {
 
             })
             .catch(err => toast.error(err.message))
-    }, [user?.email, refresh]);
+    }, [user?.email, logOut, refresh]);
     // console.log(reviews);
 
     // handle delete
     const handleDeleteReview = id => {
         fetch(`http://localhost:4000/review/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('panorama-token')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

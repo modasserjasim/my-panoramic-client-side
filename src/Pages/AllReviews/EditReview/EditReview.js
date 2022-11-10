@@ -18,7 +18,8 @@ const EditReview = () => {
         fetch(`http://localhost:4000/review/${review._id}`, {
             method: "PATCH",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem('panorama-token')}`
             },
             body: JSON.stringify(updatedReview)
         })

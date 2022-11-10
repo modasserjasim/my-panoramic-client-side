@@ -28,14 +28,13 @@ const AuthProvider = ({ children }) => {
     }
 
     const logOut = () => {
-        localStorage.removeItem('furious-token')
+        localStorage.removeItem('panorama-token');
         return signOut(auth);
     }
 
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('Changed', currentUser);
             setUser(currentUser);
             setLoading(false);
         });
