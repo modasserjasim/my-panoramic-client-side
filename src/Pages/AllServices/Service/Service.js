@@ -6,11 +6,11 @@ import 'react-photo-view/dist/react-photo-view.css';
 const Service = ({ service }) => {
     const { _id, title, image, price, description } = service;
     return (
-        <div className="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        <div className="overflow-hidden bg-white rounded-lg shadow-lg ">
             <div className="px-4 py-2">
-                <h1 className="text-2xl font-bold text-gray-800 uppercase dark:text-white">
+                <h1 className="text-2xl font-bold text-gray-800 uppercase ">
                     {title}</h1>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                <p className="mt-1 text-sm text-gray-600 ">
                     {description.length > 100 ? description.slice(0, 100) + '...' : description}
                 </p>
             </div>
