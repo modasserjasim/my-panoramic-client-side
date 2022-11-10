@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# My Panorama Repository
+My Panorama is a personal Photography review website where the real customers will leave the review for a personal photography service.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Link
 
-## Available Scripts
+Hosted in Firebase -> [My Panorama](https://mypanorama.web.app/)
 
-In the project directory, you can run:
+## The features I use in this project
+- This learning application has 8 pages including login, signup, services and my reviews, and the routing path is handled by the React router dom createBrowserRouter().
+- I implement CRUD operation in this project to create the service and review using POST method, read the data from server via GET Method and update the data using PATCH method and delete the data using DELETE Method.
+- We are using Context API to organize the code and code repetition for firebase Authentication .
+- The authentication handled by Firebase authentication.
+- There are three authentication method implement in this application such as Google, GithHub and EmailPassword authentication.
+- We are using NoSQL MangoDB to store our data like services and reviews.
+- We have installed CORS package to avoid the cross-origin blocked issue at a different path.
+- There is an Print icon on course details page, where anyone will click an pdf will generate and start download automatically.
+- There is a private route when we click get Premium access, it will protected if the user is not logged in.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Resources & Credits
+- [ReactJS Library](https://reactjs.org/)
+- [Google Firebase](https://firebase.google.com/)
+- [React Router Dom](https://reactrouter.com/en/main)
+- [Context API](https://reactjs.org/docs/context.html#api)
+- [TailwindCSS Framework](https://tailwindCSS.com/)
+- [React Toastify](https://github.com/fkhadra/react-toastify)
+- [react-photo-view component](https://react-photo-view.vercel.app/en-US)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Vercel Server](https://vercel.com/)
+- [DotEnv Package](https://www.npmjs.com/package/dotenv)
