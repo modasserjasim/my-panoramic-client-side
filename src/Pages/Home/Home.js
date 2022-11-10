@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Service from '../AllServices/Service/Service';
 import { MdMapsHomeWork, MdOutlinePhoneInTalk, MdOutlineForwardToInbox } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPinterestP } from "react-icons/fa";
 import useTitle from '../../hooks/useTitle';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Spinner from '../Others/Spinner/Spinner';
 
 const Home = () => {
+    const { loading } = useContext(AuthContext);
     const { homeServices } = useLoaderData();
     useTitle('Home');
     return (
@@ -67,11 +70,15 @@ const Home = () => {
                         <h2 className="text-xl font-bold text-gray-800  lg:text-2xl">I JUST LOVE TO CAPTURE PEOPLE IN LOVE. </h2>
                         <p className="mt-6 text-gray-500 ">I love capturing memories. That look, that smile, those tears, that brief moment frozen in time. Real memories, real emotions.</p>
                     </div>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12'>
-                        {
-                            homeServices.map(service => <Service key={service._id} service={service}></Service>)
-                        }
-                    </div>
+                    {
+                        loading ? <Spinner /> : <div
+                            className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12'>
+                            {
+                                homeServices.map(service => <Service key={service._id} service={service}></Service>)
+                            }
+                        </div>
+                    }
+
                     <div className='text-center mt-12'>
                         <Link
                             to='/services'
