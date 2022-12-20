@@ -13,6 +13,7 @@ export const setAuthToken = (user) => {
         .then(data => {
             // console.log('my data', data);
             //save the token to local storage
+            console.log(data.token);
             localStorage.setItem('panorama-token', data.token);
         })
 }

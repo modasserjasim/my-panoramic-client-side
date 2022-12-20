@@ -18,7 +18,7 @@ const Services = () => {
                     <p className="mt-6 text-gray-500 ">I love capturing memories. That look, that smile, those tears, that brief moment frozen in time. Real memories, real emotions.</p>
                 </div>
                 {
-                    loading ? <Spinner /> : <div
+                    services.length === 0 ? <Spinner /> : <div
                         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12'>
                         {
                             services.map(service => <Service key={service._id} service={service}></Service>)

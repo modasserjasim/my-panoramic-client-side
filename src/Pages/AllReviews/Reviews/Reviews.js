@@ -10,7 +10,7 @@ const Reviews = ({ service }) => {
     const [reviews, setReviews] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [refresh, setRefresh] = useState(false);
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
 
     useEffect(() => {
         fetch(`https://my-panorama.vercel.app/reviews?serviceId=${service?._id}`)

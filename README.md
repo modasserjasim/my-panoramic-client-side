@@ -3,7 +3,7 @@ My Panorama is a personal Photography review website where the real customers wi
 
 ## Live Link
 
-Hosted in Firebase -> [My Panorama](https://mypanorama.web.app/)
+Hosted in Firebase -> [My Panorama](https://my-panorama-ccc23.web.app/)
 
 ## The features I use in this project
 - This personal photography review website has 8 pages including login, sign up, services and my reviews, and the routing path is handled by the React router dom createBrowserRouter().
